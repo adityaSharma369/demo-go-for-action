@@ -10,7 +10,7 @@ import (
 func main(){
     var rows int
     var temp int = 1
-    fmt.Print("Enter number of rows : ")
+    fmt.Print("Enter number of rows that u like: ")
     fmt.Scan(&rows)
  
     for i := 0; i < rows; i++ {  
