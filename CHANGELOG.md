@@ -1,12 +1,12 @@
-# 1.0.0 (2020-03-31)
+# 2.0.0 (2020-03-31)
 
 
-* fixed ([7242f72](https://github.com/adityaSharma369/demo-go-for-action/commit/7242f728367e4e3c1b0174d804143c55d52d4795))
+* Added ([1b4c27f](https://github.com/adityaSharma369/demo-go-for-action/commit/1b4c27f8fdf731456362507cb2cd506b6b20cdf1))
 
 
 ### BREAKING CHANGES
 
-* its all good
+* its all done
 
 
 
