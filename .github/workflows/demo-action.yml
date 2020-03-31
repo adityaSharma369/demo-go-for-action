@@ -45,3 +45,13 @@ jobs:
         changelog-release-count: 0
     - name: running go program
       run: go run demo.go
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2.0.0
+      env:
+        SLACK_CHANNEL: general
+        SLACK_COLOR: '#3278BD'
+        SLACK_ICON: https://github.com/rtCamp.png?size=48
+        SLACK_MESSAGE: 'Post Content : Demo.go is sucessfully pushed'
+        SLACK_TITLE: Post Title
+        SLACK_USERNAME: aditya
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
