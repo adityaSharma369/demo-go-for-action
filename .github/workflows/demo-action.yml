@@ -1,0 +1,47 @@
+name: Go
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+    paths-ignore:
+    - 'package.json'
+    - 'CHANGELOG.md'
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Set up Go 1.13
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.13
+      id: go
+
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v2
+
+    - name: Get dependencies
+      run: |
+        go get -v -t -d ./...
+        if [ -f Gopkg.toml ]; then
+            curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+            dep ensure
+        fi
+    - name: running go program
+      run: go run demo.go
+    - name: Bump version and push tag
+      uses: TriPSs/conventional-changelog-action@v1.3.0
+      with:
+        github-token: c70b8be613ca8547bf106b147fe389e85890a1b8
+        git-message: 'chore(release): {version}'
+        preset: 'angular'
+        tag-prefix: 'v'
+        output-file: 'CHANGELOG.md'
+        changelog-release-count: 0
+    - name: running go program
+      run: go run demo.go
