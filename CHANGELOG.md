@@ -1,12 +1,12 @@
-# 2.0.0 (2020-03-31)
+# 3.0.0 (2020-04-02)
 
 
-* Added ([1b4c27f](https://github.com/adityaSharma369/demo-go-for-action/commit/1b4c27f8fdf731456362507cb2cd506b6b20cdf1))
+* features ([5d3e0fe](https://github.com/adityaSharma369/demo-go-for-action/commit/5d3e0fe353b00bfe88a443b7dd09c9d1300ea97a))
 
 
 ### BREAKING CHANGES
 
-* its all done
+* adding sh file and docker file
 
 
 
