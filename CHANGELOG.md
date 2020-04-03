@@ -1,12 +1,12 @@
-# 6.0.0 (2020-04-02)
+# 7.0.0 (2020-04-03)
 
 
-* added feat ([bfe9938](https://github.com/adityaSharma369/demo-go-for-action/commit/bfe99386333fcb33e25fda31e99afe841e428ae8))
+* changes ([1266dff](https://github.com/adityaSharma369/demo-go-for-action/commit/1266dff6a756b6df1cf815865f3213d550f5940a))
 
 
 ### BREAKING CHANGES
 
-* added docker run
+* changes
 
 
 
