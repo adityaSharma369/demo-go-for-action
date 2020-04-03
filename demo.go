@@ -4,7 +4,7 @@ import (
 		"os"
 		"io/ioutil"
 		"encoding/json"
-		"os/exec"
+// 		"os/exec"
 	)
  
 func main(){
@@ -32,19 +32,19 @@ func main(){
         fmt.Println("")
          
 	}
-	jsonFile, err := os.Open("package.json")
-	if err != nil {
-        fmt.Println(err)
-}
-byteValue,   _ := ioutil.ReadAll(jsonFile)
-	var fileContents map[string]interface{}
+// 	jsonFile, err := os.Open("package.json")
+// 	if err != nil {
+//         fmt.Println(err)
+// }
+// byteValue,   _ := ioutil.ReadAll(jsonFile)
+// 	var fileContents map[string]interface{}
 
-	json.Unmarshal([]byte(byteValue), &fileContents)
+// 	json.Unmarshal([]byte(byteValue), &fileContents)
 	var version=fmt.Sprintf("%v",fileContents["version"])
 // 	fmt.Println(version)
-	fmt.Println("version=", version)
-	cmd := exec.Command("go build -ldflags=\"-X 'main.Version="+version)
-	cmd.Start()
-	fmt.Println(cmd)
+// 	fmt.Println("version=", version)
+// 	cmd := exec.Command("go build -ldflags=\"-X 'main.Version="+version)
+// 	cmd.Start()
+// 	fmt.Println(cmd)
  
 }
