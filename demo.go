@@ -40,7 +40,7 @@ func main(){
 // 	var fileContents map[string]interface{}
 
 // 	json.Unmarshal([]byte(byteValue), &fileContents)
-	var version=fmt.Sprintf("%v",fileContents["version"])
+// 	var version=fmt.Sprintf("%v",fileContents["version"])
 // 	fmt.Println(version)
 // 	fmt.Println("version=", version)
 // 	cmd := exec.Command("go build -ldflags=\"-X 'main.Version="+version)
