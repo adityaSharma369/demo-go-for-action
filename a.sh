@@ -4,5 +4,5 @@ sudo docker build --no-cache --build-arg version_default=$version -t hello-adi:$
 sudo docker tag hello-adi:$version adityasharma369/hello-adi:$version
 sudo docker login --username=adityasharma369 --password=Adi@.3690
 sudo docker push adityasharma369/hello-adi:$version
-sudo docker tag adityasharma369/hello-adi:$version adityasharma369/hello-idiot
-sudo docker push adityasharma369/hello-idiot
+sudo docker tag hello-adi:$version gcr.io/gaadiman/hello-adi:$version
+sudo docker push gcr.io/gaadiman/hello-adi:$version
