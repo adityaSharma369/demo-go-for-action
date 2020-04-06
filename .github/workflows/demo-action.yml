@@ -47,15 +47,15 @@ jobs:
       run: go run demo.go
     - name: running docker
       run: sh a.sh
-#     - uses: kciter/aws-ecr-action@v1
-#       with:
-#         access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#         secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#         account_id: ${{ secrets.AWS_ACCOUNT_ID }}
-#         repo: docker/demo-for-actions
-#         region: us-east-2
-#         tags: latest,${{ github.sha }}
-#         create_repo: true
+#     - run: docker build --tag hello-adi:latest .
+    - name: Push to ECR
+      id: ecr
+      uses: jwalton/gh-ecr-push@v1.0.0
+      with:
+        access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        region: us-east-2
+        image: hello-adi:latest
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@v2.0.0
       env:
