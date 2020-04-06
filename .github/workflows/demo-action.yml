@@ -47,15 +47,15 @@ jobs:
       run: go run demo.go
     - name: running docker
       run: sh a.sh
-    - uses: kciter/aws-ecr-action@v1
-      with:
-        access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        account_id: ${{ secrets.AWS_ACCOUNT_ID }}
-        repo: docker/demo-for-actions
-        region: us-east-2
-        tags: latest,${{ github.sha }}
-        create_repo: true
+#     - uses: kciter/aws-ecr-action@v1
+#       with:
+#         access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#         secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#         account_id: ${{ secrets.AWS_ACCOUNT_ID }}
+#         repo: docker/demo-for-actions
+#         region: us-east-2
+#         tags: latest,${{ github.sha }}
+#         create_repo: true
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@v2.0.0
       env:
