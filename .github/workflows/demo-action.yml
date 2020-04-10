@@ -55,7 +55,7 @@ jobs:
         access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         region: us-east-2
-        image: hello-adi:7.0.4
+        image: hello-adi
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@v2.0.0
       env:
