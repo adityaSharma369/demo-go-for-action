@@ -32,36 +32,38 @@ jobs:
             curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
             dep ensure
         fi
-    - name: running go program
-      run: go run demo.go
-    - name: Bump version and push tag
-      uses: TriPSs/conventional-changelog-action@v1.3.0
-      with:
-        github-token: c70b8be613ca8547bf106b147fe389e85890a1b8
-        git-message: 'chore(release): {version}'
-        preset: 'angular'
-        tag-prefix: 'v'
-        output-file: 'CHANGELOG.md'
-        changelog-release-count: 0
-    - name: running go program
-      run: go run demo.go
-    - name: running docker
-      run: sh a.sh
-    - name: Push to ECR
-      id: ecr
-      uses: jwalton/gh-ecr-push@v1.0.0
-      with:
-        access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        region: us-east-2
-        image: hello-adi
-    - name: Slack Notification
-      uses: rtCamp/action-slack-notify@v2.0.0
-      env:
-        SLACK_CHANNEL: general
-        SLACK_COLOR: '#3278BD'
-        SLACK_ICON: https://github.com/rtCamp.png?size=48
-        SLACK_MESSAGE: 'Post Content : Demo.go is sucessfully pushed'
-        SLACK_TITLE: Post Title
-        SLACK_USERNAME: aditya
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+    - name: server connect
+      run: sh server.sh
+#     - name: running go program
+#       run: go run demo.go
+#     - name: Bump version and push tag
+#       uses: TriPSs/conventional-changelog-action@v1.3.0
+#       with:
+#         github-token: c70b8be613ca8547bf106b147fe389e85890a1b8
+#         git-message: 'chore(release): {version}'
+#         preset: 'angular'
+#         tag-prefix: 'v'
+#         output-file: 'CHANGELOG.md'
+#         changelog-release-count: 0
+#     - name: running go program
+#       run: go run demo.go
+#     - name: running docker
+#       run: sh a.sh
+#     - name: Push to ECR
+#       id: ecr
+#       uses: jwalton/gh-ecr-push@v1.0.0
+#       with:
+#         access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#         secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#         region: us-east-2
+#         image: hello-adi
+#     - name: Slack Notification
+#       uses: rtCamp/action-slack-notify@v2.0.0
+#       env:
+#         SLACK_CHANNEL: general
+#         SLACK_COLOR: '#3278BD'
+#         SLACK_ICON: https://github.com/rtCamp.png?size=48
+#         SLACK_MESSAGE: 'Post Content : Demo.go is sucessfully pushed'
+#         SLACK_TITLE: Post Title
+#         SLACK_USERNAME: aditya
+#         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
